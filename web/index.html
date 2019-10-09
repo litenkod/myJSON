@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>MyJSON.se</title>
+		<link href="https://fonts.googleapis.com/css?family=Slabo+27px&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body class="createView">
+		<div class="header">
+			<h1>MyJSON.se</h1>
+			<h2>Create JSON</h2>
+		</div>
+		<div class="container">
+			<div class="input-container">
+				<form action="">
+					<div class="file-name">
+						<label id="filenameLabel" for="filenameInput" class="opt" title="default:  MyJSON_{current date}">Filename:</label>
+						<input id="filenameInput" class="opt" type="text" placeholder="filename" />
+					</div>
+					<div class="createArea">
+						<span class="item-count -hide">Item count <span class="number">0</span></span>
+						<label for="objectKey">Key:</label>
+						<input id="objectKey" type="text" placeholder="key" />
+						
+						<label for="objectValue">Value:</label>
+						<input id="objectValue" type="text" placeholder="value" />
+						
+						<div class="button-container">
+							<button id="nextNodeBtn" type="button" class="--version-2">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="blogg-comment"><path d="M1.439 16.873L0 24l7.128-1.437L24.001 5.691l-5.69-5.69L1.439 16.873zm4.702 3.848l-3.582.724.721-3.584 2.861 2.86zM21.172 5.689L7.555 19.307l-2.86-2.861L15.52 5.62l2.846 2.846 1.414-1.414-2.846-2.846 1.377-1.377 2.861 2.86z"></path></svg>
+								Add properties</button>
+							<button id="nextAnswerBtn" type="button" class="--version-2 -hide">Next Answer</button>
+
+							<button id="createItemBtn" type="button">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 20" id="fm_article"><path d="M11.5 15.5a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h7a.5.5 0 0 1 .5.5zM11 7H4a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1zm0 4H4a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1zM15 .5v15a.5.5 0 0 1-1 0V5H1v14h10a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5V.5A.5.5 0 0 1 .5 0h14a.5.5 0 0 1 .5.5zM14 4V1H1v3h13z"></path></svg>
+							Template Done</button>
+						</div>
+						
+					</div>
+
+				</form>
+			</div>
+			<div class="output-container">
+				<h4>JSON - Template</h4>
+				<div id="template">
+					...
+				</div>
+				<h4>JSON - Output</h4>
+				<div id="output">
+					...
+				</div>
+				<button id="saveFileBtn" type="button" class="-hide --version-2">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="208 -240 512 512" id="download"><path d="M465.6-196.7C348.1-196.7 252-100.6 252 16.9s96.1 213.6 213.6 213.6 213.6-96.1 213.6-213.6c.1-117.5-96.1-213.6-213.6-213.6zm0 391.7c-97.9 0-178-80.1-178-178s80.1-178 178-178 178 80.1 178 178c.1 97.9-80 178-178 178z"></path><path d="M455.8 104.7c2.7 2.7 6.1 4 9.6 4s7-1.3 9.6-4l63-63.4c5.4-5.4 5.4-14 0-19.4-5.4-5.3-13.9-5.3-19.1 0l-40.2 40.6v-183.6c0-7.6-6.3-13.7-13.8-13.7-7.5 0-13.8 6.2-13.8 13.7V61.2l-39-39.4c-5.4-5.4-13.9-5.3-19.2 0-5.3 5.4-5.3 14 0 19.4l62.9 63.5zm73.6 21.3H402.2c-7.5 0-13.6 6.3-13.6 13.9 0 7.6 6.1 13.9 13.6 13.9h127.2c7.5 0 13.6-6.3 13.6-13.9 0-7.6-6.1-13.9-13.6-13.9z"></path></svg>
+				Download JSON</button>
+				<button id="copyJsonBtn" type="button" class="-hide --version-2">Copy json</button>
+			</div>
+		</div>
+
+		<script src="scripts.js"></script>
+	</body>
+</html>
