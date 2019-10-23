@@ -9,7 +9,7 @@ function defaultTask(cb) {
 function serve() {
 	browserSync.init({
         server: {
-			baseDir: "./",
+			baseDir: "./app",
 		},
 		port: 5700,
 		open: false,

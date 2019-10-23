@@ -5,15 +5,56 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>MyJSON.se</title>
+		<title>MyJSON</title>
 		<link href="https://fonts.googleapis.com/css?family=Slabo+27px&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="styles.css">
 	</head>
 	<body class="createView">
-		<div class="header">
-			<h1>MyJSON.se</h1>
-			<h2>Create JSON</h2>
-		</div>
+		<header class="header">
+			<!-- <h1><img src="json.jpg" alt="">MyJSON</h1> -->
+			<h1>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2500 2500">
+				<defs>
+					<linearGradient id="a" x1="849.79" y1="1550.22" x2="850.54" y2="1549.52" gradientTransform="matrix(2341.46, 0, 0, -2498.44, -1989387.57, 3873529.63)" gradientUnits="userSpaceOnUse">
+					<stop offset="0" stop-color="#52430b"/>
+					<stop offset="1" stop-color="#CEA716"/>
+					</linearGradient>
+					<linearGradient id="b" x1="850.43" y1="1549.55" x2="849.58" y2="1550.26" gradientTransform="matrix(2065.94, 0, 0, -2500, -1754762.83, 3875944)" xlink:href="#a">
+					<stop offset="0" stop-color="#52430b"/>
+					<stop offset="1" stop-color="#CEA716"/>
+					</linearGradient>
+				</defs>
+				<title>json2
+				</title>
+				<path d="M1247.88,1860.94c553.1,754,1094.38-210.45,1093.57-790.43-.93-685.7-695.95-1068.95-1094-1068.95C608.49,1.55,0,529.61,0,1252.11,0,2055.18,697.51,2500,1247.43,2500,1123,2482.08,708.27,2393.22,702.71,1438c-3.76-646,210.74-904.15,543.83-790.61,7.46,2.76,367.4,144.76,367.4,608.59,0,461.88-366.05,604.92-366.05,604.92Z" transform="translate(0 0)" style="fill:url(#a)"/>
+				<path d="M1247.24,646.88c-365.47-126-813.17,175.25-813.17,778.57,0,985.13,730,1074.54,818.51,1074.54C1891.51,2500,2500,1971.93,2500,1249.44,2500,446.38,1802.49,1.55,1252.57,1.55c152.31-21.09,820.95,164.84,820.95,1078.69,0,596-499.26,920.39-824,781.78-7.46-2.76-367.41-144.76-367.41-608.59,0-461.88,365.12-606.54,365.12-606.54Z" transform="translate(0 0)" style="fill:url(#b)"/>
+			</svg>
+			MyJSON</h1>
+			<h2>Create and save your custom (flat/level 1) json.</h2>
+			<div class="help-section">
+				<input id="helpBtn" type="checkbox" class="-hide"></input>
+				<label for="helpBtn">Help<svg>
+						<g transform="scale(0.03125 0.03125)">
+							<path d="M736.014 448c-8.908 0-17.77-3.698-24.096-10.928l-199.918-228.478-199.918 228.478c-11.636 13.3-31.856 14.65-45.154 3.010-13.3-11.638-14.648-31.854-3.010-45.154l224-256c6.076-6.944 14.854-10.928 24.082-10.928s18.006 3.984 24.082 10.928l224 256c11.638 13.3 10.292 33.516-3.010 45.154-6.070 5.312-13.582 7.918-21.058 7.918z"></path></g>
+						</svg>
+					</label>
+				<div class="help-section-inner">
+					<p>Start by creating your json template. Add <span class="hint" data-hint="2">Key</span> and default <span class="hint" data-hint="3">value</span><i class="-small">(optional)</i>.</p>
+					<p class="-small">Version 1.0.0 - All properties are saved as strings. Ex myArray: [1,2,3] = 'myArray': '[1,2,3]'</p>
+					<div class="demo">
+						<span>Ex:</span>
+						<code>
+							[{Name:'', Age: '', Category: '[1,2,3]', Length: '0', Weight: '0'}]
+						</code>
+					</div>
+					<p>When you are done with your template press <span class="hint" data-hint="3">[Templat done]</span> button<br> and start to populate your json with data items.</p>
+					<p>Finally press <span class="hint" data-hint="4">[Download json]</span> to ... download your created json file</p>
+				</div>
+			</div>
+				
+
+			<a href="http://litenkod.se" class="litenkod"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" id="fm_home"><path d="M19.82 7.616l-9-7.5A.5.5 0 0 0 10.2.1L.2 7.6A.5.5 0 0 0 0 8v11.5a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V13h5v6.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 0-1H14v-6.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0-.5.5V19H1V8.25l9.483-7.113L19 8.234V15.5a.5.5 0 0 0 1 0V8a.497.497 0 0 0-.18-.384z"></path></svg>litenkod.se</a>
+		</header>
 		<div class="container">
 			<div class="input-container">
 				<form action="">
@@ -31,17 +72,16 @@
 						
 						<div class="button-container">
 							<button id="nextNodeBtn" type="button" class="--version-2">
-									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="blogg-comment"><path d="M1.439 16.873L0 24l7.128-1.437L24.001 5.691l-5.69-5.69L1.439 16.873zm4.702 3.848l-3.582.724.721-3.584 2.861 2.86zM21.172 5.689L7.555 19.307l-2.86-2.861L15.52 5.62l2.846 2.846 1.414-1.414-2.846-2.846 1.377-1.377 2.861 2.86z"></path></svg>
-								Add properties</button>
-							<button id="nextAnswerBtn" type="button" class="--version-2 -hide">Next Answer</button>
-
-							<button id="createItemBtn" type="button">
-									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 20" id="fm_article"><path d="M11.5 15.5a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h7a.5.5 0 0 1 .5.5zM11 7H4a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1zm0 4H4a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1zM15 .5v15a.5.5 0 0 1-1 0V5H1v14h10a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5V.5A.5.5 0 0 1 .5 0h14a.5.5 0 0 1 .5.5zM14 4V1H1v3h13z"></path></svg>
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="blogg-comment"><path d="M1.439 16.873L0 24l7.128-1.437L24.001 5.691l-5.69-5.69L1.439 16.873zm4.702 3.848l-3.582.724.721-3.584 2.861 2.86zM21.172 5.689L7.555 19.307l-2.86-2.861L15.52 5.62l2.846 2.846 1.414-1.414-2.846-2.846 1.377-1.377 2.861 2.86z"></path></svg>
+							Add properties</button>
+							<button id="nextAnswerBtn" type="button" class="--version-2 -hide">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="blogg-comment"><path d="M1.439 16.873L0 24l7.128-1.437L24.001 5.691l-5.69-5.69L1.439 16.873zm4.702 3.848l-3.582.724.721-3.584 2.861 2.86zM21.172 5.689L7.555 19.307l-2.86-2.861L15.52 5.62l2.846 2.846 1.414-1.414-2.846-2.846 1.377-1.377 2.861 2.86z"></path></svg>
+							Next item</button>
+							<button id="createItemBtn" type="button" class="-hide">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 20" id="fm_article"><path d="M11.5 15.5a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h7a.5.5 0 0 1 .5.5zM11 7H4a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1zm0 4H4a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1zM15 .5v15a.5.5 0 0 1-1 0V5H1v14h10a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5V.5A.5.5 0 0 1 .5 0h14a.5.5 0 0 1 .5.5zM14 4V1H1v3h13z"></path></svg>
 							Template Done</button>
 						</div>
-						
 					</div>
-
 				</form>
 			</div>
 			<div class="output-container">
@@ -53,10 +93,10 @@
 				<div id="output">
 					...
 				</div>
-				<button id="saveFileBtn" type="button" class="-hide --version-2">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="208 -240 512 512" id="download"><path d="M465.6-196.7C348.1-196.7 252-100.6 252 16.9s96.1 213.6 213.6 213.6 213.6-96.1 213.6-213.6c.1-117.5-96.1-213.6-213.6-213.6zm0 391.7c-97.9 0-178-80.1-178-178s80.1-178 178-178 178 80.1 178 178c.1 97.9-80 178-178 178z"></path><path d="M455.8 104.7c2.7 2.7 6.1 4 9.6 4s7-1.3 9.6-4l63-63.4c5.4-5.4 5.4-14 0-19.4-5.4-5.3-13.9-5.3-19.1 0l-40.2 40.6v-183.6c0-7.6-6.3-13.7-13.8-13.7-7.5 0-13.8 6.2-13.8 13.7V61.2l-39-39.4c-5.4-5.4-13.9-5.3-19.2 0-5.3 5.4-5.3 14 0 19.4l62.9 63.5zm73.6 21.3H402.2c-7.5 0-13.6 6.3-13.6 13.9 0 7.6 6.1 13.9 13.6 13.9h127.2c7.5 0 13.6-6.3 13.6-13.9 0-7.6-6.1-13.9-13.6-13.9z"></path></svg>
+				<button id="saveFileBtn" type="button" class="--version-2" disabled>
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="208 -240 512 512" id="download"><path d="M465.6-196.7C348.1-196.7 252-100.6 252 16.9s96.1 213.6 213.6 213.6 213.6-96.1 213.6-213.6c.1-117.5-96.1-213.6-213.6-213.6zm0 391.7c-97.9 0-178-80.1-178-178s80.1-178 178-178 178 80.1 178 178c.1 97.9-80 178-178 178z"></path><path d="M455.8 104.7c2.7 2.7 6.1 4 9.6 4s7-1.3 9.6-4l63-63.4c5.4-5.4 5.4-14 0-19.4-5.4-5.3-13.9-5.3-19.1 0l-40.2 40.6v-183.6c0-7.6-6.3-13.7-13.8-13.7-7.5 0-13.8 6.2-13.8 13.7V61.2l-39-39.4c-5.4-5.4-13.9-5.3-19.2 0-5.3 5.4-5.3 14 0 19.4l62.9 63.5zm73.6 21.3H402.2c-7.5 0-13.6 6.3-13.6 13.9 0 7.6 6.1 13.9 13.6 13.9h127.2c7.5 0 13.6-6.3 13.6-13.9 0-7.6-6.1-13.9-13.6-13.9z"></path></svg>
 				Download JSON</button>
-				<button id="copyJsonBtn" type="button" class="-hide --version-2">Copy json</button>
+				<!-- <button id="copyJsonBtn" type="button" class="-hide --version-2">Copy json</button> -->
 			</div>
 		</div>
 

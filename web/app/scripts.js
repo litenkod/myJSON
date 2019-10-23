@@ -11,7 +11,7 @@ const nextAnswerBtn = document.querySelector('#nextAnswerBtn');
 const createItemBtn = document.querySelector('#createItemBtn');
 const saveFileBtn = document.querySelector('#saveFileBtn');
 const copyJsonBtn = document.querySelector('#copyJsonBtn');
-
+objectKeyInput.focus();
 
 nextNodeBtn.addEventListener('click', ()=> {
 	addNode();
@@ -20,6 +20,7 @@ nextNodeBtn.addEventListener('click', ()=> {
 createItemBtn.addEventListener('click', (event)=> {
 	body.classList.remove('createView');
 	body.classList.add('answerView');
+	saveFileBtn.disabled = false;
 
 	nextQuestion();
 })
@@ -56,6 +57,9 @@ const addNode = () => {
 		objectKeyInput.value = '';
 		objectValueInput.value = '';
 		objectKeyInput.focus();
+		if(saveNode.length >= 0){
+			createItemBtn.classList.remove('-hide');
+		}
 	}
 }
 
@@ -71,7 +75,7 @@ const nextQuestion = () => {
 		objectValueInput.value = nodeArray[countItem][1];
 		setTimeout(() => {
 			objectValueInput.focus();
-		}, 100);
+		}, 500);
 
 	} else {
 
@@ -85,12 +89,11 @@ const nextQuestion = () => {
 		itemsArray = [];
 
 		displayNodeData();
+		nextQuestion();
 
-		copyJsonBtn.classList.remove('-hide');
+		//copyJsonBtn.classList.remove('-hide');
 		document.querySelector('.item-count').classList.remove('-hide');
 		document.querySelector('.item-count .number').innerHTML = allItemsArray.length;
-
-		nextQuestion();
 
 	}
 }
