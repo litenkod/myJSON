@@ -291,18 +291,18 @@ code {
 	justify-content: center;
 	align-items: center;
 	letter-spacing: 0.2rem;
-	transform: scale(0.5);
-	animation: letterSpace 5s forwards ease-in-out;;
+	/* transform: scale(0.5);
+	animation: letterSpace 5s forwards ease-in-out;; */
 	
 }
 
 header h1 svg {
 	position: absolute;
-	width: 4rem;
-	height: 4rem;
+	width: 3rem;
+	height: 3rem;
 	right: 100%;
 	transform: translateX(-10000%);
-	animation: fly .6s forwards 4s ease-in-out;
+	animation: fly .6s forwards 1s ease-in-out;
 }
 
 header img {
