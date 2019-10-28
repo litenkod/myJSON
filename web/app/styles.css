@@ -50,7 +50,7 @@ h4 {
 }
 
 a {
-	color: inherit;
+	color: pink;
 	text-decoration: dotted;
 }
 
@@ -302,7 +302,7 @@ header h1 svg {
 	height: 3rem;
 	right: 100%;
 	transform: translateX(-10000%);
-	animation: fly .6s forwards 1s ease-in-out;
+	animation: fly .6s forwards .4s ease-in-out;
 }
 
 header img {
@@ -322,13 +322,15 @@ header img {
 	padding: 3rem;
 }
 
-.help-section {
+.help-section,
+.downloadScript {
 	max-width: 800px;
 	margin: 0 auto;
 	margin-bottom: 1rem;
 }
 
-.help-section label {
+.help-section label,
+.downloadScript label {
 	display: flex;
     justify-content: center;
     align-items: center;
@@ -339,7 +341,8 @@ header img {
 	transition: transform .6s ease-in-out;
 }
 
-.help-section label svg{
+.help-section label svg,
+.downloadScript label svg{
 	width: 2rem;
 	height: 1rem;
 	margin: 0;
@@ -348,25 +351,30 @@ header img {
 	transition: transform .3s ease-in-out;
 }
 
-.help-section label:hover {
+.help-section label:hover,
+.downloadScript label:hover {
 	cursor: pointer;
 	transform: scale(1.1);
 }
 
-.help-section-inner {
+.help-section-inner,
+.downloadScript-inner {
 	max-height: 0px;
 	overflow: hidden;
 	transition: all .4s ease-in-out;
 }
-.help-section input[type=checkbox]:checked ~ label {
+.help-section input[type=checkbox]:checked ~ label,
+.downloadScript input[type=checkbox]:checked ~ label  {
 	transform: scale(1.1);
 }
 
-.help-section input[type=checkbox]:checked ~ label svg{
+.help-section input[type=checkbox]:checked ~ label svg,
+.downloadScript input[type=checkbox]:checked ~ label svg{
 	transform: rotate(0deg);
 }
 
-.help-section input[type=checkbox]:checked ~ .help-section-inner {
+.help-section input[type=checkbox]:checked ~ .help-section-inner,
+.downloadScript input[type=checkbox]:checked ~ .downloadScript-inner {
 	max-height: 300px;
 }
 
@@ -375,12 +383,6 @@ header img {
     background: var(--color-1);
     color: var(--color-white);
     padding: 0.1rem 0.3rem;
-}
-
-.hint:hover {
-	/* cursor: pointer;
-	color: var(--color-1);
-	background: var(--color-white); */
 }
 
 .file-name,
