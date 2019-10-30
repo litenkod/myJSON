@@ -1,7 +1,8 @@
 
 const { src, dest, parallel, series, watch } = require('gulp');
 const browserSync = require('browser-sync').create();
-const concat = require('gulp-concat');
+const babel = require('gulp-babel');
+const uglify = require("gulp-uglify");
 
 function defaultTask(cb) {
 	cb();
@@ -15,7 +16,6 @@ function serve() {
 		port: 5700,
 		open: false,
 		});
-		
 }
 
 function html() {
@@ -29,14 +29,17 @@ function css() {
 }
 
 function js() {
-	return src('app/*.js', { sourcemaps: true })
-		.pipe(concat('scripts.js'))
+	return src('app/scripts.js', { sourcemaps: true })
+		.pipe(babel({
+			presets: ['@babel/env']
+		}))
+		.pipe(uglify())
 		.pipe(dest('./../', { sourcemaps: false }))
 }
 
 function assets() {
-	return src('app/*.{svg,png,jpg}')
-		.pipe(dest('./../'))
+	return src('app/images/*.{svg,png,jpg}')
+		.pipe(dest('./../images/'))
 }
 
 function reload(cb) {
@@ -47,8 +50,8 @@ function reload(cb) {
 function deployTask(cb) {
 	html();
 	css();
-	js();
 	assets();
+	js();
 	cb();
 }
 

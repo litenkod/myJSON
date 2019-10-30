@@ -1,7 +1,6 @@
 
 'use strict';
 
-let inputData;
 const body = document.body;
 const filenameInput = document.querySelector('#filenameInput');
 const objectKeyInput = document.querySelector('#objectKey');
