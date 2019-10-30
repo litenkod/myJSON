@@ -29,7 +29,7 @@ function css() {
 }
 
 function js() {
-	return src('app/scripts.js', { sourcemaps: true })
+	return src('app/**/*.js', { sourcemaps: true })
 		.pipe(babel({
 			presets: ['@babel/env']
 		}))
