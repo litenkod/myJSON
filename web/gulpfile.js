@@ -1,6 +1,7 @@
 
-const { series, watch } = require('gulp');
-var browserSync = require('browser-sync').create();
+const { src, dest, parallel, series, watch } = require('gulp');
+const browserSync = require('browser-sync').create();
+const concat = require('gulp-concat');
 
 function defaultTask(cb) {
 	cb();
@@ -17,11 +18,35 @@ function serve() {
 		
 }
 
+function html() {
+	return src('app/*.html')
+		.pipe(dest('./../'))
+}
+
+
+function js() {
+	return src('app/*.js', { sourcemaps: true })
+		.pipe(concat('script.js'))
+		.pipe(dest('./../', { sourcemaps: false }))
+}
+
+function assets() {
+	return src('app/*.{svg,png,jpg}')
+		.pipe(dest('./../'))
+}
+
 function reload(cb) {
 	browserSync.reload();
 	cb();
 }
 
-watch('**.*', reload);
+function deployTask(cb) {
+	html() 
+	js();
+	assets();
+	cb();
+}
 
+watch('app/**.*', reload);
+exports.deploy = series(deployTask);
 exports.default = series(defaultTask, serve);
