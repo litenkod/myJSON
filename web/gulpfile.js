@@ -23,10 +23,14 @@ function html() {
 		.pipe(dest('./../'))
 }
 
+function css() {
+	return src('app/*.css')
+		.pipe(dest('./../'))
+}
 
 function js() {
 	return src('app/*.js', { sourcemaps: true })
-		.pipe(concat('script.js'))
+		.pipe(concat('scripts.js'))
 		.pipe(dest('./../', { sourcemaps: false }))
 }
 
@@ -41,7 +45,8 @@ function reload(cb) {
 }
 
 function deployTask(cb) {
-	html() 
+	html();
+	css();
 	js();
 	assets();
 	cb();

@@ -155,6 +155,38 @@ const saveFileBtn = document.querySelector('#saveFileBtn');
 const copyJsonBtn = document.querySelector('#copyJsonBtn');
 objectKeyInput.focus();
 
+const hints = document.querySelectorAll('[data-hint]');
+for (const hint of hints) {
+	hint.addEventListener('mouseover', (event) => {
+		const hintItem = event.target.getAttribute('data-hint');
+		let currentHint = document.querySelector(`[data-hint-on="${hintItem}"]`);
+		currentHint.classList.add('-demo');
+		if(currentHint.classList.contains('-hide')){
+			currentHint.disabled = true;
+			currentHint.classList.remove('-hide');
+			currentHint.classList.add('-hide2');
+		}
+	});
+
+	hint.addEventListener('mouseleave', (event) => {
+		const hintItem = event.target.getAttribute('data-hint');
+		let currentHint = document.querySelector(`[data-hint-on="${hintItem}"]`);
+		currentHint.classList.remove('-demo');
+		if(currentHint.classList.contains('-hide2')){
+			currentHint.disabled = false;
+			currentHint.classList.remove('-hide2');
+			currentHint.classList.add('-hide');
+		}
+	});
+
+	hint.addEventListener('click', (event) => {
+		const hintItem = event.target.getAttribute('data-hint');
+		let currentHint = document.querySelector(`[data-hint-on="${hintItem}"]`);
+		currentHint.focus();
+	});
+
+};
+
 nextNodeBtn.addEventListener('click', ()=> {
 	addNode();
 });
@@ -233,9 +265,8 @@ const nextQuestion = () => {
 		displayNodeData();
 		nextQuestion();
 
-		//copyJsonBtn.classList.remove('-hide');
-		document.querySelector('.item-count').classList.remove('-hide');
-		document.querySelector('.item-count .number').innerHTML = allItemsArray.length;
+		document.querySelector('.item-count-number').classList.remove('-hide');
+		document.querySelector('.item-count-number').innerHTML = allItemsArray.length;
 
 	}
 }
