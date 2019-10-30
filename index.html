@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="">
 	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-151168377-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-151168377-1');
+		</script>
+
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="description" content="">
@@ -52,8 +61,8 @@
 						<label for="objectKey">Key:</label>
 						<input id="objectKey" type="text" placeholder="key" data-hint-on="1" />
 						
-						<label for="objectValue">Value:</label>
-						<input id="objectValue" type="text" placeholder="value" data-hint-on="2"" />
+						<label for="objectValue" class="opt">Value:</label>
+						<input id="objectValue" class="opt" type="text" placeholder="value" data-hint-on="2"" />
 						
 						<div class="button-container">
 							<button id="nextNodeBtn" type="button" class="--version-2">
