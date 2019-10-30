@@ -1,15 +1,16 @@
 
 'use strict';
 
-const body = document.body;
-const filenameInput = document.querySelector('#filenameInput');
-const objectKeyInput = document.querySelector('#objectKey');
-const objectValueInput = document.querySelector('#objectValue');
-const nextNodeBtn = document.querySelector('#nextNodeBtn');
-const nextAnswerBtn = document.querySelector('#nextAnswerBtn');
-const createItemBtn = document.querySelector('#createItemBtn');
-const saveFileBtn = document.querySelector('#saveFileBtn');
-const copyJsonBtn = document.querySelector('#copyJsonBtn');
+const body = document.body,
+	filenameInput = document.querySelector('#filenameInput'),
+	objectKeyInput = document.querySelector('#objectKey'),
+	objectValueInput = document.querySelector('#objectValue'),
+	nextNodeBtn = document.querySelector('#nextNodeBtn'),
+	nextAnswerBtn = document.querySelector('#nextAnswerBtn'),
+	createItemBtn = document.querySelector('#createItemBtn'),
+	saveFileBtn = document.querySelector('#saveFileBtn'),
+	copyJsonBtn = document.querySelector('#copyJsonBtn');
+	
 objectKeyInput.focus();
 
 const hints = document.querySelectorAll('[data-hint]');
@@ -94,9 +95,10 @@ const addNode = () => {
 	}
 }
 
-let countItem = 0;
-let itemsArray = [];
-let allItemsArray = [];
+let countItem = 0,
+	itemsArray = [],
+	allItemsArray = [];
+
 const nextQuestion = () => {
 	
 	if(countItem < nodeArray.length){
@@ -109,7 +111,6 @@ const nextQuestion = () => {
 		}, 500);
 
 	} else {
-
 		const dataToSave = itemsArray.reduce(function(p, c) {
 			p[c[0]] = c[1];
 			return p;
@@ -124,7 +125,6 @@ const nextQuestion = () => {
 
 		document.querySelector('.item-count-number').classList.remove('-hide');
 		document.querySelector('.item-count-number').innerHTML = allItemsArray.length;
-
 	}
 }
 
@@ -133,8 +133,7 @@ const addItems = () => {
 	itemsArray.push([nodeArray[countItem][0], answerValue]);
 	countItem++;
 	
-	nextQuestion();
-	
+	nextQuestion();	
 };
 
 const nodeArray = [];
@@ -146,6 +145,7 @@ const saveNode = (key, value) => {
 const displayTemplateData = () => {
 	const templateOutput = document.querySelector('#template');
 	let templateHtml = '';
+	
 	nodeArray.map((item)=> {
 		templateHtml += `${item[0]} : ${item[1]}<br>`;
 	});
@@ -153,8 +153,9 @@ const displayTemplateData = () => {
 }
 
 const displayNodeData = () => {
-	const templateOutput = document.querySelector('#output');
-	const addRow = JSON.stringify(allItemsArray).replace(/},/g, "},<br>");
+	const templateOutput = document.querySelector('#output'),
+		addRow = JSON.stringify(allItemsArray).replace(/},/g, "},<br>");
+
 	templateOutput.innerHTML = addRow;
 }
 
@@ -165,9 +166,10 @@ const newDate = new Date(),
 document.querySelector('#filenameLabel').setAttribute('title', `default filename: ${defaultFilename}`);
 
 const downloadFile= () => {
-	const filename = filenameInput.value !== '' ? `${filenameInput.value}.json` : `MyJSON_${d}.json`;
-	const data = JSON.stringify(allItemsArray);
-	const element = document.createElement('a');
+	const filename = filenameInput.value !== '' ? `${filenameInput.value}.json` : `MyJSON_${d}.json`,
+		data = JSON.stringify(allItemsArray),
+		element = document.createElement('a');
+
 	element.setAttribute('href', 'data:application/json;charset=utf-8,' + encodeURIComponent(data));
 	element.setAttribute('download', filename);
 	element.style.display = 'none';
