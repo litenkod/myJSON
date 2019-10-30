@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>MyJSON</title>
+		<link href="https://fonts.googleapis.com/css?family=Slabo+27px&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="styles.css">
+		<link rel="icon" type="image/png" href="./litenkod.png" sizes="128x128">
+	</head>
+	<body class="createView">
+		<header class="header">
+			<!-- <h1><img src="json.jpg" alt="">MyJSON</h1> -->
+			<h1>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 109.02"><title>litenkod</title><path d="M26.25,17.26v34.5a13.54,13.54,0,0,1-.92,4.52,10.92,10.92,0,0,1-3.18,4.52,12.22,12.22,0,0,1,3.11,4.52,12.75,12.75,0,0,1,1,4.52v36.06H34v10.18H18.19a3.33,3.33,0,0,1-2.19-.92,4.26,4.26,0,0,1-1.06-3.32V73.53A9.63,9.63,0,0,0,13.31,68,6.23,6.23,0,0,0,9,65.19v-9a4.14,4.14,0,0,0,2.54-.85,7.53,7.53,0,0,0,1.91-2.12,10.06,10.06,0,0,0,1.48-5.09V11.32q0-2.68,1.27-3.46a4.31,4.31,0,0,1,2-.78H34V17.26Z" transform="translate(-9 -7.08)" style="fill:#52430b"/><path d="M94,17.26V7.08h15.84a4.29,4.29,0,0,1,2,.78q1.27.78,1.27,3.46V48.08a10.12,10.12,0,0,0,1.48,5.09,8,8,0,0,0,1.84,2.12,4.06,4.06,0,0,0,2.61.85v9A6.09,6.09,0,0,0,114.62,68a9.92,9.92,0,0,0-1.55,5.51v38.32a4.09,4.09,0,0,1-1.13,3.32,3.46,3.46,0,0,1-2.12.92H94V105.91h7.77V69.86a13.52,13.52,0,0,1,.92-4.53,10.87,10.87,0,0,1,3.18-4.52,10.88,10.88,0,0,1-3.18-4.53,13.5,13.5,0,0,1-.92-4.52V17.26Z" transform="translate(-9 -7.08)" style="fill:#52430b"/><path d="M36.38,89.89c0-3.75,2.53-6.38,6.08-6.38s6,2.63,6,6.38-2.33,6.38-6.08,6.38C38.81,96.27,36.38,93.53,36.38,89.89Z" transform="translate(-9 -7.08)" style="fill:#52430b"/><path d="M57.34,89.89c0-3.75,2.53-6.38,6.08-6.38s6,2.63,6,6.38-2.33,6.38-6.08,6.38C59.77,96.27,57.34,93.53,57.34,89.89Z" transform="translate(-9 -7.08)" style="fill:#52430b"/><path d="M78.31,89.89c0-3.75,2.53-6.38,6.08-6.38s6,2.63,6,6.38S88,96.27,84.28,96.27C80.74,96.27,78.31,93.53,78.31,89.89Z" transform="translate(-9 -7.08)" style="fill:#52430b"/></svg>
+			MyJSON</h1>
+			<h2>Create and save your custom (flat/level 1) json.</h2>
+			<div class="help-section">
+				<input id="helpBtn" type="checkbox" class="toogle -hide"></input>
+				<label for="helpBtn">Help<svg>
+						<g transform="scale(0.03125 0.03125)">
+							<path d="M736.014 448c-8.908 0-17.77-3.698-24.096-10.928l-199.918-228.478-199.918 228.478c-11.636 13.3-31.856 14.65-45.154 3.010-13.3-11.638-14.648-31.854-3.010-45.154l224-256c6.076-6.944 14.854-10.928 24.082-10.928s18.006 3.984 24.082 10.928l224 256c11.638 13.3 10.292 33.516-3.010 45.154-6.070 5.312-13.582 7.918-21.058 7.918z"></path></g>
+						</svg>
+					</label>
+				<div class="help-section-inner">
+					<p>Start by creating your json template. Add <span class="hint" data-hint="2">Key</span> and default <span class="hint" data-hint="3">value</span><i class="-small">(optional)</i>.</p>
+					<p class="-small">Version 1.0.0 - All properties are saved as strings. Ex myArray: [1,2,3] = 'myArray': '[1,2,3]'</p>
+					<div class="demo">
+						<span>Ex:</span>
+						<code>
+							[{Name:'', Age: '', Category: '[1,2,3]', Length: '0', Weight: '0'}]
+						</code>
+					</div>
+					<p>When you are done with your template press <span class="hint" data-hint="3">[Templat done]</span> button<br> and start to populate your json with data items.</p>
+					<p>Finally press <span class="hint" data-hint="4">[Download json]</span> to ... download your created json file</p>
+				</div>
+			</div>
+				
+
+			<a href="http://litenkod.se" class="litenkod"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" id="fm_home"><path d="M19.82 7.616l-9-7.5A.5.5 0 0 0 10.2.1L.2 7.6A.5.5 0 0 0 0 8v11.5a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V13h5v6.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 0-1H14v-6.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0-.5.5V19H1V8.25l9.483-7.113L19 8.234V15.5a.5.5 0 0 0 1 0V8a.497.497 0 0 0-.18-.384z"></path></svg>litenkod.se</a>
+		</header>
+		<div class="container">
+			<div class="input-container">
+				<form action="">
+					<div class="file-name">
+						<label id="filenameLabel" for="filenameInput" class="opt" title="default:  MyJSON_{current date}">Filename:</label>
+						<input id="filenameInput" class="opt" type="text" placeholder="filename" />
+					</div>
+					<div class="createArea">
+						<span class="item-count -hide">Item count <span class="number">0</span></span>
+						<label for="objectKey">Key:</label>
+						<input id="objectKey" type="text" placeholder="key" />
+						
+						<label for="objectValue">Value:</label>
+						<input id="objectValue" type="text" placeholder="value" />
+						
+						<div class="button-container">
+							<button id="nextNodeBtn" type="button" class="--version-2">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="blogg-comment"><path d="M1.439 16.873L0 24l7.128-1.437L24.001 5.691l-5.69-5.69L1.439 16.873zm4.702 3.848l-3.582.724.721-3.584 2.861 2.86zM21.172 5.689L7.555 19.307l-2.86-2.861L15.52 5.62l2.846 2.846 1.414-1.414-2.846-2.846 1.377-1.377 2.861 2.86z"></path></svg>
+							Add properties</button>
+							<button id="nextAnswerBtn" type="button" class="--version-2 -hide">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="blogg-comment"><path d="M1.439 16.873L0 24l7.128-1.437L24.001 5.691l-5.69-5.69L1.439 16.873zm4.702 3.848l-3.582.724.721-3.584 2.861 2.86zM21.172 5.689L7.555 19.307l-2.86-2.861L15.52 5.62l2.846 2.846 1.414-1.414-2.846-2.846 1.377-1.377 2.861 2.86z"></path></svg>
+							Next item</button>
+							<button id="createItemBtn" type="button" class="-hide">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 20" id="fm_article"><path d="M11.5 15.5a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h7a.5.5 0 0 1 .5.5zM11 7H4a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1zm0 4H4a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1zM15 .5v15a.5.5 0 0 1-1 0V5H1v14h10a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5V.5A.5.5 0 0 1 .5 0h14a.5.5 0 0 1 .5.5zM14 4V1H1v3h13z"></path></svg>
+							Template Done</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="output-container">
+				<h4>JSON - Template</h4>
+				<div id="template">
+					...
+				</div>
+				<h4>JSON - Output</h4>
+				<div id="output">
+					...
+				</div>
+				<button id="saveFileBtn" type="button" class="--version-2" disabled>
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="208 -240 512 512" id="download"><path d="M465.6-196.7C348.1-196.7 252-100.6 252 16.9s96.1 213.6 213.6 213.6 213.6-96.1 213.6-213.6c.1-117.5-96.1-213.6-213.6-213.6zm0 391.7c-97.9 0-178-80.1-178-178s80.1-178 178-178 178 80.1 178 178c.1 97.9-80 178-178 178z"></path><path d="M455.8 104.7c2.7 2.7 6.1 4 9.6 4s7-1.3 9.6-4l63-63.4c5.4-5.4 5.4-14 0-19.4-5.4-5.3-13.9-5.3-19.1 0l-40.2 40.6v-183.6c0-7.6-6.3-13.7-13.8-13.7-7.5 0-13.8 6.2-13.8 13.7V61.2l-39-39.4c-5.4-5.4-13.9-5.3-19.2 0-5.3 5.4-5.3 14 0 19.4l62.9 63.5zm73.6 21.3H402.2c-7.5 0-13.6 6.3-13.6 13.9 0 7.6 6.1 13.9 13.6 13.9h127.2c7.5 0 13.6-6.3 13.6-13.9 0-7.6-6.1-13.9-13.6-13.9z"></path></svg>
+				Download JSON</button>
+				<!-- <button id="copyJsonBtn" type="button" class="-hide --version-2">Copy json</button> -->
+			</div>
+
+			<div class="downloadScript">
+				<input id="nodeBtn" type="checkbox" class="toogle -hide"></input>
+				<label for="nodeBtn">Would you prefer to run this in your terminal?<svg>
+						<g transform="scale(0.03125 0.03125)">
+							<path d="M736.014 448c-8.908 0-17.77-3.698-24.096-10.928l-199.918-228.478-199.918 228.478c-11.636 13.3-31.856 14.65-45.154 3.010-13.3-11.638-14.648-31.854-3.010-45.154l224-256c6.076-6.944 14.854-10.928 24.082-10.928s18.006 3.984 24.082 10.928l224 256c11.638 13.3 10.292 33.516-3.010 45.154-6.070 5.312-13.582 7.918-21.058 7.918z"></path></g>
+						</svg>
+					</label>
+				<div class="downloadScript-inner">
+					<p>Download <a href="/nodeScript.js" download>nodeScript.js</a> and run.</p>
+					<code>
+						$ node [path to nodeScript.js]
+					</code>
+					<p>Start creating your json template</p>
+					<p>
+						Done/next = xxx
+					</p>
+					<code>
+						$ xxx
+					</code>
+					<p>Add json items</p>
+					
+				</div>
+				
+			</div>
+		</div>
+
+		<script src="scripts.js"></script>
+	</body>
+</html>
