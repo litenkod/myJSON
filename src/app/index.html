@@ -36,18 +36,14 @@
 				<div class="help-section-inner">
 					<p>Start creating your json template by adding <span class="hint" data-hint="1">Key</span> and default <span class="hint" data-hint="2">value</span><i class="-small">(optional)</i>.</p>
 					<p class="-small">Version 1.0.0 - All properties are saved as strings. Ex myArray: [1,2,3] = 'myArray': '[1,2,3]'</p>
-					<div class="demo">
-						<span>Ex:</span>
-						<code>
-							[{Name:'', Age: '', Category: '[1,2,3]', Length: '0', Weight: '0'}]
-						</code>
+					<div class="exemple">
+						<span>$:</span>
+						<code>[{Name:'', Age: '', Category: '[1,2,3]', Length: '0', Weight: '0'}]</code>
 					</div>
 					<p>When you are done with your template press <span class="hint" data-hint="3">[Templat done]</span> button<br> and start to populate your json with data items.</p>
 					<p>Finally press <span class="hint" data-hint="4">[Download json]</span> to download your created json file.</p>
 				</div>
 			</div>
-				
-
 			<a href="http://litenkod.se" class="litenkod"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" id="fm_home"><path d="M19.82 7.616l-9-7.5A.5.5 0 0 0 10.2.1L.2 7.6A.5.5 0 0 0 0 8v11.5a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V13h5v6.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 0-1H14v-6.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0-.5.5V19H1V8.25l9.483-7.113L19 8.234V15.5a.5.5 0 0 0 1 0V8a.497.497 0 0 0-.18-.384z"></path></svg>litenkod.se</a>
 		</header>
 		<div class="container">
@@ -102,17 +98,34 @@
 					</label>
 				<div class="downloadScript-inner">
 					<p>Download <a href="/nodeScript.js" download>nodeScript.js</a> and run.</p>
-					<code>
-						$ node [path to nodeScript.js]
-					</code>
+					<div class="exemple">
+						<span>$:</span>
+						<code>$ node [path to nodeScript.js]</code>
+					</div>
 					<p>Start creating your json template</p>
-					<p>
-						Done/next = xxx
-					</p>
-					<code>
-						$ xxx
-					</code>
+					<div class="exemple">
+						<span>$:</span>
+						<code>Name
+							Age
+							City : [Stockholm (default value)]
+							xxx (done)
+						</code>
+					</div>
 					<p>Add json items</p>
+					<div class="exemple">
+						<span>$:</span>
+						<code>Name: Bosse
+							Age: 27
+							City: Stockholm
+
+							Name: Eva
+							Age: 45
+							City: New York
+
+							Name: Lennart
+							...
+						</code>
+					</div>
 					
 				</div>
 				
