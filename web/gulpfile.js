@@ -57,4 +57,4 @@ function deployTask(cb) {
 
 watch('app/**.*', reload);
 exports.deploy = series(deployTask);
-exports.default = series(defaultTask, serve);
+exports.default = series(defaultTask, deployTask, serve);
